@@ -1,0 +1,173 @@
+html, body, h1, h2, h3, p {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    font-family: Noto Sans, sans-serif;
+}
+
+.header {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    width: 100%;
+    background: #000000;
+    color: #fff;
+    padding: 10px 20px;
+    min-height: 40px;
+    align-items: center;
+}
+
+nav {
+    top: 60px;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    justify-content: end;
+    background: #f8f8f8;
+    align-items: center;
+    border: 1px solid #A9A9A9;
+}
+
+.nav-item.active {
+    font-weight: 600;
+    color: red; 
+}
+
+nav a {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #000000;
+    margin-right: 50px;
+    transition: background 0.3s ease;
+}
+
+nav a:hover {
+    color: red;
+}
+
+.burger-icon {
+    display: none;
+}
+
+.burger-icon i {
+    color: #fff;
+    font-size: 35px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 50px 150px 50px 150px;
+}
+
+.home-content {
+    display: flex;
+    padding: 220px 150px 50px 150px;
+}
+
+.about-us-text {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.vision-section {
+    margin: 50px 150px; 
+}
+  
+.main-section-image {
+    flex: 1;
+    text-align: center;
+}
+
+.text-main-section {
+    margin: auto;
+}
+
+.text-main-section h2 {
+    color: #000000;
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+  
+.text-main-section p {
+    font-size: 22px;
+}
+
+footer {
+    display: block;
+    width: 100%;
+    background: #000000;
+    color: #fff;
+    min-height: 100px
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 0px 45px 10px 45px;
+    }
+
+    .text-main-section, .mission-section, .vision-section {
+        margin: 20px 0 20px 0;
+        text-align: center;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+
+    .burger-icon {
+        display: flex;
+    }
+
+    nav.active {
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+    }
+
+    .main-section-image img {
+        max-width: 100%; 
+        height: auto; 
+    }
+
+    .text-main-section h2 {
+        font-size: 50px;
+    }
+      
+    .text-main-section p {
+        font-size: 18px;
+    }
+
+    .main-section-image {
+        width: 80%;
+    }
+}
+
+@media (max-width: 425px) {
+    .home-content {
+        display: flex;
+        padding: 160px 60px 30px 60px;
+    }
+
+    .text-main-section, .mission-section, .vision-section {
+        text-align: center;
+    }
+
+    .text-main-section h2 {
+        font-size: 40px;
+    }
+      
+    .text-main-section p {
+        font-size: 15px;
+    }
+}

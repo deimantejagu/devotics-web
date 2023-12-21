@@ -1,0 +1,60 @@
+.about-us-section {
+    display: flex;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    margin: 0 auto;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.about-us-section-image {
+    flex: 1;
+}
+
+.about-us-text h2, .content h2 {
+    font-size: 60px;
+    font-weight: 600;
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.about-us-text p {
+    margin: 25px;
+    font-size: 18px;
+    text-align: justify;
+    font-weight: lighter;
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 30px 45px 30px 45px;
+    }
+
+    .about-us-section {
+        flex-direction: column;
+    }
+
+    .about-us-text h2 {
+        font-size: 50px;
+        margin-bottom: 30px;
+    }
+
+    .about-us-text p {
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 425px) {
+    .about-us-text h2 {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .about-us-text p {
+        font-size: 12px;
+        text-align: center;
+    }
+}
