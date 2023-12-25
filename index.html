@@ -8,6 +8,7 @@
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/aboutUs.css">
     <link rel="stylesheet" href="styles/services.css">
@@ -15,19 +16,18 @@
 </head>
 
 <body>
-    <div class="header" id="navbar">
-        <h1>Devotics</h1>
+    <div class="header logo" id="navbar">
+        <img src="images/logo.svg" alt="Devotics Logo">
+        <nav>
+            <a href="#home" class="nav-item">Pradžia</a>
+            <a href="#about" class="nav-item">Apie mus</a>
+            <a href="#services" class="nav-item">Paslaugos</a>
+            <a href="#contact" class="nav-item">Susisiekite</a>
+        </nav>
         <div class="burger-icon" onclick="toggleMenu()">
             <i class="fas fa-bars"></i>
         </div>
     </div>
-      
-    <nav>
-        <a href="#home" class="nav-item">Pradžia</a>
-        <a href="#about" class="nav-item">Apie mus</a>
-        <a href="#services" class="nav-item">Paslaugos</a>
-        <a href="#contact" class="nav-item">Susisiekite</a>
-    </nav>
 
     <section id="home">
         <div class="home-content">
@@ -136,59 +136,79 @@
 
     <section id="contact">
         <div class="content">
-            <!-- <h2>Susisiekite</h2> -->
             <div class="contact-section">
                 <div class="contact-image-text">
                     <h3>
                         <span style="color: #005ed6;">Susidomėjote?</span>
                         Lauksime Jūsų žinutės!
                     </h3>
-                    <div class="contact-section-image">
-                        <img src="/images/contact1.png" alt="Illustration" style="max-width: 100%; height: auto;">
-                    </div>
+                    <img src="/images/contact3.png" alt="Illustration">
                 </div>
-                    <div class="form-container">
-                        <form id="contactForm">
-                        <div class="input-row">
-                            <div class="input-group">
-                            <label for="name">Vardas, Pavardė</label>
-                            <input type="text" id="name" placeholder="Vardas, Pavardė">
-                            </div>
-                            <div class="input-group">
-                            <label for="email">El. Paštas</label>
-                            <input type="email" id="email" placeholder="El. Pašto adresas">
-                            </div>
+                <div class="form-container">
+                    <form id="contactForm">
+                    <div class="input-row">
+                        <div class="input-group">
+                        <label for="name">Vardas, Pavardė</label>
+                        <input type="text" id="name" placeholder="Vardas, Pavardė">
                         </div>
                         <div class="input-group">
-                            <label for="phone">Tel. Numeris</label>
-                            <input type="tel" id="phone" placeholder="Tel. Numeris">
+                        <label for="email">El. Paštas</label>
+                        <input type="email" id="email" placeholder="info@gmail.com">
                         </div>
-                        <div class="input-group">
-                            <label for="company">Įmonės pavadinimas</label>
-                            <input type="text" id="company" placeholder="Įmonės pavadinimas">
-                        </div>
-                        <div class="input-group">
-                            <label for="service">Paslaugos pavadinimas</label>
-                            <select id="service">
-                                <option value="">Prašome pasirinkti paslaugą</option>
-                                <option value="Elektroninė parduotuvė">Elektroninė parduotuvė</option>
-                                <option value="Elektroninė parduotuvė">Elektroninė parduotuvė</option>
-                                <option value="Elektroninė parduotuvė">Elektroninė parduotuvė</option>
-                                <option value="Elektroninė parduotuvė">Elektroninė parduotuvė</option>
-                                <option value="Elektroninė parduotuvė">Elektroninė parduotuvė</option>
-                            </select>
-                        </div>
-                        <div class="input-group">
-                            <label for="feedback">Pastaboes</label>
-                            <textarea id="feedback" placeholder="Jeigu turite pastabų ar papildomų klausimų, prašome rašyti čia"></textarea>
-                        </div>
-                        <button type="submit">Submit</button>
-                        </form>
                     </div>
+                    <div class="input-group">
+                        <label for="phone">Tel. Numeris</label>
+                        <input type="tel" id="phone" placeholder="+370*********">
+                    </div>
+                    <div class="input-group">
+                        <label for="company">Įmonės pavadinimas</label>
+                        <input type="text" id="company" placeholder="Įmonės pavadinimas">
+                    </div>
+                    <div class="input-group">
+                        <label for="service">Paslaugos pavadinimas</label>
+                        <select id="service">
+                            <option value="Elektroninė parduotuvė">Elektroninė parduotuvė</option>
+                            <option value="Elektroninė parduotuvė">Elektroninė parduotuvė</option>
+                            <option value="Elektroninė parduotuvė">Elektroninė parduotuvė</option>
+                            <option value="Elektroninė parduotuvė">Elektroninė parduotuvė</option>
+                            <option value="Elektroninė parduotuvė">Elektroninė parduotuvė</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="feedback">Pastabos</label>
+                        <textarea id="feedback" placeholder="Jeigu turite pastabų ar papildomų klausimų, prašome rašyti čia"></textarea>
+                    </div>
+                    <button type="submit">Siųsti</button>
+                    </form>
+                </div>
             </div>
     </section>
 
-    <footer></footer>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <img src="images/logo.svg" alt="Site Logo">
+                </a>
+                <p class="footer-text">Devotics.lt © 2023 Visos teisės saugomos</p>
+            </div>
+            <div class="footer-contacts">
+                <a href="tel:+37067099265">Tel: +370 670 99265</a>  
+                <a href="mailto:web@site.lt">Email: info@devotics.lt</a>
+                <div class="social-icons">
+                    <a href="https://facebook.com">
+                        <div class="fa fa-facebook"></div>
+                    </a> |
+                    <a href="https://facebook.com">
+                        <div class="fa fa-instagram"></div>
+                    </a> |
+                    <a href="https://facebook.com">
+                        <div class="fa fa-twitter"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>    
 
     <script src="script.js"></script>
 </body>

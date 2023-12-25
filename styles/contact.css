@@ -18,10 +18,11 @@
     text-align: center;
 }
 
-.contact-section-image {
-    flex: 1;
-    max-width: 500px;
-}
+/* .contact-section img {
+    max-width: 100%; 
+    height: auto;
+    object-fit: cover;
+} */
 
 .form-container {
     background: #ffffff;
@@ -49,7 +50,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: none;
-    color: grey;
+    font-family: Noto Sans, sans-serif;
 }
 
 .input-group textarea {

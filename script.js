@@ -20,12 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });  
 
-// This script will be run after the page has loaded because of the defer attribute
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contactForm');
     contactForm.addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevent the actual form submission
-        // Here you can add the code to handle the form data
+        e.preventDefault();
         console.log('Form submitted');
     });
 });
