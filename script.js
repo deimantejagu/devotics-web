@@ -27,3 +27,8 @@ window.addEventListener('DOMContentLoaded', () => {
         console.log('Form submitted');
     });
 });
+
+function toggleMenu() {
+    var menu = document.querySelector('.burger-menu nav');
+    menu.classList.toggle('active');
+}

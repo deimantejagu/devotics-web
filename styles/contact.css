@@ -2,7 +2,6 @@
     display: flex;
     gap: 150px;
     flex-direction: row;
-    margin-top: 80px;
 }
 
 .contact-image-text {
@@ -17,12 +16,6 @@
     font-size: 50px;
     text-align: center;
 }
-
-/* .contact-section img {
-    max-width: 100%; 
-    height: auto;
-    object-fit: cover;
-} */
 
 .form-container {
     background: #ffffff;
@@ -50,7 +43,6 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: none;
-    font-family: Noto Sans, sans-serif;
 }
 
 .input-group textarea {
@@ -82,4 +74,20 @@
 .form-container button:hover {
     background: #333333;
 }
-  
+
+@media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column; /* Stack elements vertically */
+        gap: 50px; /* Reduce the gap */
+        align-items: center; /* Center-align the items */
+    }
+
+    .contact-image-text, 
+    .form-container {
+        width: 100%; /* Full width for better readability */
+    }
+
+    .input-row {
+        flex-direction: column; /* Stack input fields vertically */
+    }
+}

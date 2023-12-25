@@ -21,17 +21,10 @@
     margin: 25px;
     font-size: 18px;
     text-align: justify;
-    font-weight: lighter;
     line-height: 1.5;
 }
 
 @media screen and (max-width: 768px) {
-    .content {
-        flex-direction: column-reverse;
-        align-items: center;
-        padding: 30px 45px 30px 45px;
-    }
-
     .about-us-section {
         flex-direction: column;
     }
@@ -43,7 +36,6 @@
 
     .about-us-text p {
         font-size: 16px;
-        text-align: center;
     }
 }
 
@@ -55,6 +47,5 @@
 
     .about-us-text p {
         font-size: 12px;
-        text-align: center;
     }
 }

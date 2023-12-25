@@ -5,6 +5,10 @@
     gap: 110px;
 }
 
+.services-section h2{
+    width: 100%;
+}
+
 .service-card {
     display: flex;
     flex-direction: column;
@@ -33,7 +37,6 @@
 
 .service-card p {
     font-size: 18px;
-    font-weight: lighter;
     line-height: 1.5;
 }
 

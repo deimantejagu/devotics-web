@@ -1,8 +1,17 @@
-html, body, h1, h2, h3, p {
-    scroll-behavior: smooth;
+* {
     margin: 0;
-    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html, body, textarea, input, select {
     font-family: Noto Sans, sans-serif;
+}
+
+section {
+    scroll-margin-top: 60px;
 }
 
 .header {
@@ -12,8 +21,8 @@ html, body, h1, h2, h3, p {
     width: 100%;
     background: #000000;
     color: #fff;
-    padding: 10px 20px;
-    min-height: 40px;
+    padding: 10px 0px 10px 20px;
+    min-height: 60px;
     align-items: center;
 }
 
@@ -63,7 +72,7 @@ nav a:hover {
 
 .home-content {
     display: flex;
-    padding: 220px 150px 50px 150px;
+    padding: 140px 150px 50px 150px;
 }
 
 .about-us-text {
@@ -127,8 +136,7 @@ footer a {
 
 .footer-text {
     margin-top: 10px;
-    font-size: smaller;
-    color: #a8a8a8; /* Lighter grey color */
+    color: #a8a8a8;
 }
 
 .footer-contacts {
@@ -144,17 +152,64 @@ footer a {
     display: inline-block;
 }
 
-/* Responsive adjustments as needed */
 @media (max-width: 768px) {
-    .footer-content {
+    .home-content {
+        padding: 100px 75px 50px 75px;
+    }
+
+    .content {
+        padding: 50px 75px 50px 75px;
+    }
+
+    .header nav {
+        display: none;
+    }
+
+    .burger-icon {
+        display: flex;
+        padding-right: 60px;
+    }
+
+    .burger-menu nav {
+        display: none;
+        padding: 80px 0px 0px 0px;
         flex-direction: column;
-        align-items: center;
+        transition: max-height 0.3s ease-out;
     }
-    .footer-brand, .footer-nav, .footer-contacts {
-        align-items: center;
-        margin-bottom: 20px;
+    
+    .burger-menu nav.active {
+        display: flex; 
     }
-    .social-icons img {
-        margin: 0 5px;
+
+    .nav-item{
+        font-weight: 600;
+        color: black; 
+        border-bottom: 1px solid #bfbfbf;
+        width: 100%;
+        margin: 0px;
+        background-color: #f2f2f2; 
+        padding: 15px 0px 15px 0px;
+        text-align: center;
+    }
+
+    .home-content {
+        flex-direction: column-reverse; 
+        align-items: center; 
+    }
+
+    .vision-section {
+        margin: 50px 0 0 0;
+    }
+
+    .text-main-section, .main-section-image {
+        width: 100%; /* Full width for better readability */
+    }
+
+    .text-main-section h2 {
+        font-size: 40px; /* Adjust font size for smaller screens */
+    }
+
+    .text-main-section p {
+        font-size: 15px; /* Adjust paragraph font size */
     }
 }
