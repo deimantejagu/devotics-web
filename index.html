@@ -147,93 +147,49 @@
                         <img src="/images/contact1.png" alt="Illustration" style="max-width: 100%; height: auto;">
                     </div>
                 </div>
-                <div class="contact-form">
-                    <div class="input-group">
-                        <label for="name">Vardas, Pavardė</label>
-                        <input type="text" id="name">
-                    </div>
-                    <div class="input-group">
-                        <label for="email">El. pašto adresas</label>
-                        <input type="email" id="email">
-                    </div>
-                    <div class="input-group">
-                        <label for="phone">Telefono numeris</label>
-                        <input type="tel" id="phone">
-                    </div>
-                    <div class="input-group">
-                        <label for="company">Verslo pavadinimas</label>
-                        <input type="text" id="company">
-                    <div class="dropdown">
-                        <label for="service">Pasirinkite paslaugą</label>
-                        <button class="dropbtn"></button>
-                        <div id="myDropdown" class="dropdown-content">
-                            <a href="#">Paslauga 1</a>
-                            <a href="#">Paslauga 2</a>
-                            <a href="#">Paslauga 3</a>
-                            <!-- ... more links ... -->
+                    <div class="form-container">
+                        <form id="contactForm">
+                        <div class="input-row">
+                            <div class="input-group">
+                            <label for="name">Vardas, Pavardė</label>
+                            <input type="text" id="name" placeholder="Vardas, Pavardė">
+                            </div>
+                            <div class="input-group">
+                            <label for="email">El. Paštas</label>
+                            <input type="email" id="email" placeholder="El. Pašto adresas">
+                            </div>
                         </div>
+                        <div class="input-group">
+                            <label for="phone">Tel. Numeris</label>
+                            <input type="tel" id="phone" placeholder="Tel. Numeris">
+                        </div>
+                        <div class="input-group">
+                            <label for="company">Įmonės pavadinimas</label>
+                            <input type="text" id="company" placeholder="Įmonės pavadinimas">
+                        </div>
+                        <div class="input-group">
+                            <label for="service">Paslaugos pavadinimas</label>
+                            <select id="service">
+                                <option value="">Prašome pasirinkti paslaugą</option>
+                                <option value="Elektroninė parduotuvė">Elektroninė parduotuvė</option>
+                                <option value="Elektroninė parduotuvė">Elektroninė parduotuvė</option>
+                                <option value="Elektroninė parduotuvė">Elektroninė parduotuvė</option>
+                                <option value="Elektroninė parduotuvė">Elektroninė parduotuvė</option>
+                                <option value="Elektroninė parduotuvė">Elektroninė parduotuvė</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="feedback">Pastaboes</label>
+                            <textarea id="feedback" placeholder="Jeigu turite pastabų ar papildomų klausimų, prašome rašyti čia"></textarea>
+                        </div>
+                        <button type="submit">Submit</button>
+                        </form>
                     </div>
-                    <div class="input-group textarea-group">
-                        <label for="feedback">Papildoma informacija</label>
-                        <textarea id="feedback"></textarea>
-                    </div>
-                    <button class="submitButton" type="submit">Submit</button>
-                </div>
             </div>
     </section>
 
     <footer></footer>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const navItems = document.querySelectorAll('.nav-item');
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        navItems.forEach(item => {
-                            item.classList.remove('active');
-                            if (item.getAttribute('href').substring(1) === entry.target.id) {
-                                item.classList.add('active');
-                            }
-                        });
-                    }
-                });
-            }, { threshold: 0.5 }); // Adjust threshold as needed
-
-            // Observe each section
-            document.querySelectorAll('section').forEach(section => {
-                observer.observe(section);
-            });
-        });  
-        
-        document.addEventListener("DOMContentLoaded", () => {
-            const dropdown = document.querySelector('.dropbtn');
-            const dropdownContent = document.getElementById('myDropdown');
-
-            // Toggle dropdown
-            dropdown.addEventListener('click', function() {
-                dropdownContent.classList.toggle('show');
-            });
-
-            // Handle dropdown item click
-            dropdownContent.querySelectorAll('a').forEach(item => {
-                item.addEventListener('click', function() {
-                    dropdown.textContent = this.textContent; // Update button text
-                    dropdownContent.classList.remove('show'); // Hide dropdown
-                });
-            });
-
-            // Close dropdown if clicked outside
-            window.onclick = function(event) {
-                if (!event.target.matches('.dropbtn')) {
-                    if (dropdownContent.classList.contains('show')) {
-                        dropdownContent.classList.remove('show');
-                    }
-                }
-            };
-        });
-
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
