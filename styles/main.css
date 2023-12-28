@@ -14,6 +14,44 @@ section {
     scroll-margin-top: 60px;
 }
 
+p, 
+.social-icons, footer, 
+.form-container button, 
+.price {
+    font-size: 18px;
+}
+
+h2 {
+    color: #000000;
+    font-size: 60px;
+    margin-bottom: 60px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h4 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 50px 150px 50px 150px;
+}
+
+.blue-text {
+    color: #005ed6;
+}
+
+/* header and navigation */
 .header {
     display: flex;
     position: fixed;
@@ -28,7 +66,7 @@ section {
 
 .logo img {
     width: auto; 
-    height: 40px; 
+    max-height: 40px; 
 }
 
 nav {
@@ -37,7 +75,7 @@ nav {
     align-items: center;
 }
 
-.nav-item.active {
+.header nav a.active {
     font-weight: 600;
     color: red; 
 }
@@ -54,6 +92,7 @@ nav a:hover {
     color: red;
 }
 
+/* mobile and tablet navigation */
 .burger-icon {
     display: none;
 }
@@ -63,13 +102,7 @@ nav a:hover {
     font-size: 35px;
 }
 
-.content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 50px 150px 50px 150px;
-}
-
+/* "Pradzia" page content */
 .home-content {
     display: flex;
     padding: 140px 150px 50px 150px;
@@ -83,10 +116,10 @@ nav a:hover {
 .vision-section {
     margin: 50px 150px; 
 }
-  
-.main-section-image {
-    flex: 1;
-    text-align: center;
+
+.home-content img {
+    max-width: 40%; 
+    height: auto;
 }
 
 .text-main-section {
@@ -94,15 +127,11 @@ nav a:hover {
 }
 
 .text-main-section h2 {
-    color: #000000;
-    font-size: 60px;
     margin-bottom: 20px;
-}
-  
-.text-main-section p {
-    font-size: 17px;
+    text-align: start;
 }
 
+/* footer */
 footer {
     background-color: #000000; 
     color: #ffffff; 
@@ -110,7 +139,6 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 14px;
 }
 
 footer a {
@@ -145,16 +173,30 @@ footer a {
 
 .social-icons {
     margin-top: 10px;
-    font-size: 17px;
 }
 
 .social-icons a {
     display: inline-block;
 }
 
+/* tablet */
 @media (max-width: 768px) {
+    h2 {
+        font-size: 40px;
+    }
+    
+    h3 {
+        font-size: 30px;
+    }
+    
+    h4 {
+        font-size: 21px;
+    }
+
     .home-content {
         padding: 100px 75px 50px 75px;
+        flex-direction: column-reverse; 
+        align-items: center; 
     }
 
     .content {
@@ -167,11 +209,13 @@ footer a {
 
     .burger-icon {
         display: flex;
+
         padding-right: 60px;
     }
 
     .burger-menu nav {
         display: none;
+        width: 100%;
         padding: 80px 0px 0px 0px;
         flex-direction: column;
         transition: max-height 0.3s ease-out;
@@ -181,7 +225,7 @@ footer a {
         display: flex; 
     }
 
-    .nav-item{
+    .burger-menu nav a{
         font-weight: 600;
         color: black; 
         border-bottom: 1px solid #bfbfbf;
@@ -192,24 +236,115 @@ footer a {
         text-align: center;
     }
 
-    .home-content {
-        flex-direction: column-reverse; 
-        align-items: center; 
+    .text-main-section {
+        display: flex;
+        justify-content: center; 
     }
 
+    .home-content img {
+        justify-self: center; 
+        max-width: 70%; 
+    }
+    
     .vision-section {
-        margin: 50px 0 0 0;
+        margin: 0 0 0 0;
     }
 
-    .text-main-section, .main-section-image {
-        width: 100%; /* Full width for better readability */
+    footer, 
+    .footer-content p, 
+    footer-contacts {
+        font-size: 15px;
     }
 
-    .text-main-section h2 {
-        font-size: 40px; /* Adjust font size for smaller screens */
+    .logo img {
+        max-height: 35px; 
+    }
+}
+
+@media (max-width: 425px) {
+    p, 
+    .social-icons, footer, 
+    .form-container button, 
+    .price {
+        font-size: 16px;
     }
 
-    .text-main-section p {
-        font-size: 15px; /* Adjust paragraph font size */
+    h2 {
+        margin-bottom: 40px;
+        margin-top: 10px;
+        font-size: 30px;
+    }
+    
+    h3 {
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+    
+    h4 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .home-content {
+        padding: 80px 15px 40px 15px;
+    }
+
+    .content {
+        padding: 40px 15px 40px 15px;
+    }
+
+    .text-main-section {
+        flex-flow: column wrap;
+    }
+
+    .home-content img {
+        justify-self: center; 
+        max-width: 70%; 
+    }
+
+    footer {
+        padding: 20px 15px;
+        text-align: center;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .footer-brand, 
+    .footer-contacts {
+        align-items: center;
+        margin-bottom: 15px; 
+    }
+
+    .footer-contacts {
+        order: 1;
+    }
+
+    .footer-brand {
+        order: 2;
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .social-icons a {
+        margin: 0 5px; 
+    }
+
+    footer, 
+    .footer-content p, 
+    footer-contacts {
+        font-size: 13px;
+    }
+
+    .logo img {
+        max-height: 30px; 
     }
 }
