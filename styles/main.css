@@ -52,54 +52,58 @@ h4 {
 }
 
 /* header and navigation */
-.header {
+header {
     display: flex;
-    position: fixed;
-    justify-content: space-between;
     width: 100%;
+    min-height: 80px;
     background: #000000;
     color: #fff;
-    padding: 10px 0px 10px 20px;
-    min-height: 60px;
     align-items: center;
+    justify-content: space-between;
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
 }
 
 .logo img {
     width: auto; 
     max-height: 40px; 
+    padding: 10px 0 10px 25px;
 }
 
-nav {
-    padding: 10px;
-    justify-content: end;
-    align-items: center;
-}
-
-.header nav a.active {
-    font-weight: 600;
-    color: red; 
-}
-
-nav a {
-    padding: 10px 15px;
-    text-decoration: none;
-    color: #ffffff;
-    margin-right: 50px;
-    transition: background 0.3s ease;
-}
-
-nav a:hover {
-    color: red;
-}
-
-/* mobile and tablet navigation */
-.burger-icon {
+.hamburger {
     display: none;
 }
 
-.burger-icon i {
-    color: #fff;
-    font-size: 35px;
+.hamburger .fas.fa-bars {
+    display: block;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.nav-bar ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav-bar ul li a {
+    display: block;
+    padding: 10px 25px;
+    text-decoration: none;
+    color: #ffffff;
+    margin: 0 5px;
+    border-radius: 50px;
+    transition: background 0.2s ease;
+}
+
+.nav-bar ul li a:hover {
+    color: #11101b;
+    background: #fefefe;
+}
+
+.nav-bar ul li a.link-active {
+    color: #11101b;
+    background: #fefefe;
 }
 
 /* "Pradzia" page content */
@@ -165,6 +169,7 @@ footer a {
 .footer-text {
     margin-top: 10px;
     color: #a8a8a8;
+    font-size: 13px;
 }
 
 .footer-contacts {
@@ -203,37 +208,57 @@ footer a {
         padding: 50px 75px 50px 75px;
     }
 
-    .header nav {
-        display: none;
+    .logo img {
+        padding: 10px 0 10px 50px;
     }
 
-    .burger-icon {
-        display: flex;
-
-        padding-right: 60px;
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        padding: 10px 50px 10px 0;
     }
 
-    .burger-menu nav {
-        display: none;
-        width: 100%;
-        padding: 80px 0px 0px 0px;
-        flex-direction: column;
-        transition: max-height 0.3s ease-out;
-    }
-    
-    .burger-menu nav.active {
-        display: flex; 
+    .hamburger .fas.fa-bars {
+        display: block;
     }
 
-    .burger-menu nav a{
-        font-weight: 600;
-        color: black; 
-        border-bottom: 1px solid #bfbfbf;
-        width: 100%;
-        margin: 0px;
-        background-color: #f2f2f2; 
-        padding: 15px 0px 15px 0px;
+    .hamburger line {
+        background: #fefefe;
+    }
+
+    .nav-bar {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        height: 0;
+        width: 100vw;
+        background: #11101b;
+        transition: background 0.2s ease;
+        overflow: hidden;
+    }
+
+    .nav-bar.active {
+        height: 400px;
+        transition: background 0.2s ease;
+    }
+
+    .nav-bar ul {
+        display: block;
+        width: fit-content;
+        height: 100%;
+        margin: 80px auto 0 auto;
         text-align: center;
+        transition: background 0.5s ease;
+        opacity: 0;
+    }
+
+    .nav-bar.active ul{
+        opacity: 1;
+    }
+
+    .nav-bar ul li a {
+        margin-bottom: 20px;
     }
 
     .text-main-section {

@@ -1,24 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
     const navItems = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('section');
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                const id = entry.target.id;
                 navItems.forEach(item => {
-                    item.classList.remove('active');
-                    if (item.getAttribute('href').substring(1) === entry.target.id) {
-                        item.classList.add('active');
-                    }
+                    item.classList.toggle('active', item.getAttribute('href').substring(1) === id);
                 });
             }
         });
-    }, { threshold: 0.5 }); // Adjust threshold as needed
+    }, { threshold: 0.5 });
 
-    // Observe each section
-    document.querySelectorAll('section').forEach(section => {
-        observer.observe(section);
-    });
-});  
+    sections.forEach(section => observer.observe(section));
+});
 
 window.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contactForm');
@@ -28,7 +24,25 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-function toggleMenu() {
-    var menu = document.querySelector('.burger-menu nav');
-    menu.classList.toggle('active');
+hamburger = document.querySelector(".hamburger");
+navBar = document.querySelector(".nav-bar");
+navLinks = document.querySelectorAll('.nav-bar ul li a');
+
+hamburger.onclick = function() {
+    navBar.classList.toggle("active");
 }
+
+navBar.onclick = function() {
+    navBar.classList.toggle("active").style.height = 0;
+}
+
+function makeLinkActive(clickedLink) {
+    navLinks.forEach(link => {
+        link.classList.remove('link-active');
+    });
+    clickedLink.classList.add('link-active')
+}
+
+navLinks.forEach(link => {
+   link.addEventListener('click', () => makeLinkActive(link)); 
+});
