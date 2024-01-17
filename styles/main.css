@@ -240,7 +240,6 @@ footer a {
 
     .nav-bar.active {
         height: 400px;
-        transition: background 0.2s ease;
     }
 
     .nav-bar ul {

@@ -7,11 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
             if (entry.isIntersecting) {
                 const id = entry.target.id;
                 navItems.forEach(item => {
-                    item.classList.toggle('active', item.getAttribute('href').substring(1) === id);
+                    item.classList.toggle('link-active', item.getAttribute('href').substring(1) === id);
                 });
             }
         });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.3 });
 
     sections.forEach(section => observer.observe(section));
 });
@@ -32,17 +32,8 @@ hamburger.onclick = function() {
     navBar.classList.toggle("active");
 }
 
-navBar.onclick = function() {
-    navBar.classList.toggle("active").style.height = 0;
-}
-
-function makeLinkActive(clickedLink) {
-    navLinks.forEach(link => {
-        link.classList.remove('link-active');
-    });
-    clickedLink.classList.add('link-active')
-}
-
 navLinks.forEach(link => {
-   link.addEventListener('click', () => makeLinkActive(link)); 
+    link.addEventListener('click', () => {
+        navBar.classList.remove("active"); 
+    });
 });
